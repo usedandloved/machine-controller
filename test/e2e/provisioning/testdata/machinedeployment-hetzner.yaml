@@ -28,6 +28,7 @@ spec:
             serverType: "cx11"
             datacenter: ""
             location: "nbg1"
+            firewall: "machine-controller-e2e"
             networks:
               - "machine-controller-e2e"
           operatingSystem: "<< OS_NAME >>"

@@ -102,6 +102,7 @@ This project provides easy to use e2e testing using Hetzner cloud. To run the e2
 locally, the following steps are required:
 
 * Populate the environment variable `HZ_E2E_TOKEN` with a valid Hetzner cloud token
+* Ensure `jq` is installed locally
 * Run `make e2e-cluster` to get a simple kubeadm cluster on Hetzner
 * Run `hack/run-machine-controller.sh` to locally run the machine-controller for your freshly created cluster
 
