@@ -48,11 +48,12 @@ spec:
             datacenter: ""
             location: "fsn1"
             image: "ubuntu-20.04"
-            # Optional: firewall ID or name
-            firewall: "<< YOUR_FIREWALL >>"
             # Optional: network IDs or names
             networks:
               - "<< YOUR_NETWORK >>"
+            # Optional: firewall IDs or names
+            firewalls:
+              - "<< YOUR_FIREWALL >>"
             # Optional
             labels:
               my: label
