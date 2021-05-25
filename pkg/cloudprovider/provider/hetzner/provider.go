@@ -193,7 +193,7 @@ func (p *provider) Validate(spec v1alpha1.MachineSpec) error {
 	}
 
 	if len(c.Firewalls) != 0 {
-		for _, firewall := range c.Firewall {
+		for _, firewall := range c.Firewalls {
 			if _, _, err = client.Firewall.Get(ctx, firewall); err != nil {
 				return fmt.Errorf("failed to get firewall %q: %v", firewall, err)
 			}
@@ -287,7 +287,7 @@ func (p *provider) Create(machine *v1alpha1.Machine, _ *cloudprovidertypes.Provi
 			if n == nil {
 				return nil, fmt.Errorf("firewall %q does not exist", firewall)
 			}
-			serverCreateOpts.Firewalls = append(serverCreateOpts.Firewalls, n)
+			serverCreateOpts.Firewalls = append(serverCreateOpts.Firewalls, &hcloud.ServerCreateFirewall{*n})
 		}
 	}
 
